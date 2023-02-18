@@ -1,2 +1,5 @@
 # ignore python venv
 /venv/
+
+# ignore fluent output
+*.trn
