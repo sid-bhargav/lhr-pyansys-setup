@@ -1,1 +1,3 @@
-# Longhorn Racing pyansys Setup
+# Longhorn Racing `pyansys` Setup
+
+`pyansys` documentation: https://docs.pyansys.com/
