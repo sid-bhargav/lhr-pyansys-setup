@@ -1,6 +1,6 @@
-# Longhorn Racing `pyansys` Setup
+# Longhorn Racing Combustion `pyansys` Setup
 
-## Documentation
+## `pyansys` Documentation
 
 `pyansys` docs: https://docs.pyansys.com/
 

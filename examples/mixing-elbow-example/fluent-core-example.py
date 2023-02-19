@@ -5,6 +5,8 @@
 import ansys.fluent.core as pyfluent
 from ansys.fluent.core import examples
 
+sphinx_gallery_thumbnail_path = './mixing_elbow_settings.png'
+
 # import example object
 import_filename = examples.download_file("mixing_elbow.msh.h5", "pyfluent/mixing_elbow")
 
