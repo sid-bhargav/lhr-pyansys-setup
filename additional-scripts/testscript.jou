@@ -1,0 +1,29 @@
+; =================================================================
+; test script for fluent operation
+; application case will be for FSAE mesh testing and fluent solver
+; my ide looks so much better than the one im using this summer lol
+; =================================================================
+
+; MODEL TYPE
+/define models viscous kw-sst? yes
+
+; DEFINE ZONE TYPES
+/define boundary-conditions modify-zones zone-type inlet velocity-inlet
+/define boundary-conditions modify-zones zone-type outlet 
+
+; DEFINE BOUNDARY CONDITIONS   
+
+
+/solve report-definitions add lift lift force-vector 
+
+
+; INITIALIZATION
+/solve initialize hyb-initialization
+
+
+/file read-macro benchmark.scm
+
+
+/file stop-transcript
+
+/exit ok
