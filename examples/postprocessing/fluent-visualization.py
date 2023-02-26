@@ -32,24 +32,7 @@ mesh1 = graphics.Meshes["mesh-1"]
 # edges
 mesh1.show_edges = True
 
-# surfaces list
-mesh1.surfaces_list = [
-    "in1",
-    "in2",
-    "in3",
-    "out1",
-    "solid_up:1",
-    "solid_up:1:830",
-    "solid_up:1:830-shadow",
-]
-mesh1.display("window-1")
-
-surf_vel_contour = graphics.Surfaces["surf-vel-contour"]
-surf_vel_contour.definition.type = "iso-surface"
-iso_surf3 = surf_vel_contour.definition.iso_surface
-iso_surf3.field = "velocity-magnitude"
-iso_surf3.rendering = "contour"
-iso_surf3.iso_value = 0.0
-surf_vel_contour.display("window-2")
-
-
+temperature_contour = graphics.Contours["contour-temperature"]
+temperature_contour.field = "temperature"
+temperature_contour.surfaces_list = ["mid-plane-x", "outlet-plane"]
+temperature_contour.display("window-3")
