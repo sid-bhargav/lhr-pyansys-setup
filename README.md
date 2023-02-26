@@ -2,9 +2,9 @@
 
 Longhorn Racing Combustion setup to use pyansys and SOLIDWORKS design tables to automate the simulation of multiple CFD set ups. 
 
-# Process
+## Process
 
-## 1. Using `Named Selection Manager` to create named selections in SOLIDWORKS
+### 1. Using `Named Selection Manager` to create named selections in SOLIDWORKS
 
 We want to be able to create named selections without opening the Ansys Workbench GUI so that we can run simulations through `pyansys`. To do this, we need to do a few things.
 
@@ -22,7 +22,7 @@ Press `F5` on the keyboard so that you can select the specific type of geometry 
 
 Ansys should now be able to import the geometry of a `.SLDPRT` file along with the Named Selections you had assigned to it. 
 
-# `pyansys` Documentation
+## `pyansys` Documentation
 
 `pyansys` docs: https://docs.pyansys.com/
 
