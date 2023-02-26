@@ -1,6 +1,6 @@
 # Longhorn Racing Combustion `pyansys` Setup
 
-Longhorn Racing Combustion setup to use pyansys and SOLIDWORKS design tables to automate the simulation of multiple CFD set ups. 
+Longhorn Racing Combustion setup to use pyansys and SOLIDWORKS design tables to automate the simulation of multiple CFD set ups. The setup is currently in development and does not currently work. 
 
 ## Process
 
@@ -8,7 +8,7 @@ Longhorn Racing Combustion setup to use pyansys and SOLIDWORKS design tables to 
 
 We want to be able to create named selections without opening the Ansys Workbench GUI so that we can run simulations through `pyansys`. To do this, we need to do a few things.
 
-First, we need to make sure that Ansys and SOLIDWORKs can work together and produce/read CAD part files that have been formatted using the Named Selection Manager tool through the Ansys add-in. To do this we need to set up the Ansys add-in suite in SOLIDWORKS.
+First, we need to make sure that Ansys and SOLIDWORKS can work together and produce/read CAD part files that have been formatted using the Named Selection Manager tool through the Ansys add-in.
 
 In SOLIDWORKS go to, `Tools > Add-ins...` and make sure that `Ansys 2022 R2` is selected under `Other Add-ins`.
 
@@ -18,7 +18,7 @@ Produce named selections in SOLIDWORKS by opening the Named Selection Manager fr
 
 Press `F5` on the keyboard so that you can select the specific type of geometry you would like to name select, and once you have finished your desired selection press create and give your selection a name.
 
-> Make sure the name of your named selection is formatted as, 'NS_[NameSelection].'
+> Make sure the name of your named selection is formatted as, 'NS_[NameSelection].' Our program uses Pascal Case.
 
 Ansys should now be able to import the geometry of a `.SLDPRT` file along with the Named Selections you had assigned to it. 
 
