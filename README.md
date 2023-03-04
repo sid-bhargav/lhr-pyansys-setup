@@ -20,7 +20,17 @@ Press `F5` on the keyboard so that you can select the specific type of geometry 
 
 > Make sure the name of your named selection is formatted as, 'NS_[NameSelection].' Our program uses Pascal Case.
 
-Ansys should now be able to import the geometry of a `.SLDPRT` file along with the Named Selections you had assigned to it. 
+Our naming convention:
+| Selection     | Our Nomenclature |
+|---------------|------------------|
+| Ground        | NS_ground        |
+| Slip Wall     | NS_slipWall      |
+| Inlet         | NS_inlet         |
+| Outlet        | NS_outlet        |
+| Wing 1        | NS_wing1         |
+| Trailing Edge | NS_trailingEdge  |
+
+Ansys should now be able to import the geometry of a `.SLDPRT` file along with the Named Selections you had assigned to it.
 
 ## `pyansys` Documentation
 
