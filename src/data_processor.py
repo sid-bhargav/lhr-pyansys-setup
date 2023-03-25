@@ -6,5 +6,9 @@ print(yp.calc(5, 9))
 
 
 class DataProcessor(object):
-    def __init__(self):
+    def __init__(self, design_table, named_selections):
+        self.dt = design_table
+        self.ns = named_selections
+
+    def preprocess(self):
         pass
