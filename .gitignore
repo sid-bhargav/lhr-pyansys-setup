@@ -8,6 +8,7 @@
 # ignore fluent output
 *.trn
 *.bat
+*.log
 
 # ignore images folder for now
 /images/

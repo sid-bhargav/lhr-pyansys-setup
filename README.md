@@ -38,6 +38,11 @@ In Ansys Workbench go to `Tools > Options... > Geometry Import` and in `Advanced
 
 > If you do not do this step, the meshing will not work. If you are getting an error about the mesh failing since the model is comprised of surface bodies and not solid bodies, you haven't set `Analysis Type` to 2D.
 
+### 3. `data.in` Formatting
+
+line 0: design table
+line 1: named selections directory
+
 ## `pyansys` Documentation
 
 `pyansys` docs: https://docs.pyansys.com/
