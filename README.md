@@ -18,7 +18,7 @@ Produce named selections in SOLIDWORKS by opening the Named Selection Manager fr
 
 Press `F5` on the keyboard so that you can select the specific type of geometry you would like to name select, and once you have finished your desired selection press create and give your selection a name.
 
-> Make sure the name of your named selection is formatted as, 'NS\_\[NameSelection\].' Our program uses Pascal Case.
+> Make sure the name of your named selection is formatted as, 'NS\_\[nameSelection\].' Our program uses Camel Case.
 
 Our naming convention:
 | Selection | Our Nomenclature |
