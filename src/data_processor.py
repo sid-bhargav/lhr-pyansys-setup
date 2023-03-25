@@ -2,7 +2,7 @@
 
 import yplus as yp
 
-print(yp.__name__)
+print(yp.calc(5, 9))
 
 
 class DataProcessor(object):
