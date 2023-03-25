@@ -43,6 +43,12 @@ In Ansys Workbench go to `Tools > Options... > Geometry Import` and in `Advanced
 line 0: design table
 line 1: named selections directory
 
+To run the program in the command line do the following:
+
+Linux/Mac: `python3 main.py < data.in`
+
+Windows: `python main.py < data.in`
+
 ## `pyansys` Documentation
 
 `pyansys` docs: https://docs.pyansys.com/
