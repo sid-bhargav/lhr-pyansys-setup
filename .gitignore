@@ -1,6 +1,9 @@
 # ignore python venv
 /venv/
 
+# ignore python cache
+*/__pycache__/
+
 # ignore fluent output
 *.trn
 *.bat
