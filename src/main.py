@@ -9,4 +9,6 @@ processor = dp.DataProcessor(None, None)
 
 # mesh
 
-# cfd
+# run fluent simulation
+mesh_directory = "src/test.msh"
+cfd.solve(mesh_directory, setup="2d")

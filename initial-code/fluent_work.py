@@ -33,34 +33,34 @@ tui.define.units('length', 'mm')
 
 tui.define.boundary_conditions.list_zones()
 
-# # set up boundary conditions
-# solver.setup.boundary_conditions.velocity_inlet['inlet'].vmag = {"option": "constant or expression", "constant": 13} if twentytwo_check else 13 # m/s
-# solver.setup.boundary_conditions.velocity_inlet['inlet'].print_state()
+# set up boundary conditions
+solver.setup.boundary_conditions.velocity_inlet['inlet'].vmag = {"option": "constant or expression", "constant": 13} if twentytwo_check else 13 # m/s
+solver.setup.boundary_conditions.velocity_inlet['inlet'].print_state()
 
-# solver.setup.boundary_conditions.pressure_outlet['outlet'].prevent_reverse_flow = True
-# solver.setup.boundary_conditions.pressure_outlet['outlet'].print_state()
+solver.setup.boundary_conditions.pressure_outlet['outlet'].prevent_reverse_flow = True
+solver.setup.boundary_conditions.pressure_outlet['outlet'].print_state()
 
-# solver.setup.boundary_conditions.wall['ground'].motion_bc = "Moving Wall"
-# solver.setup.boundary_conditions.wall['ground'].vmag = {"option": "constant or expression", "constant": 13} if twentytwo_check else 13 # m/s
-# solver.setup.boundary_conditions.wall['ground'].component_of_wall_translation = -1
-# #solver.setup.boundary_conditions.wall['ground'].print_state()
+solver.setup.boundary_conditions.wall['ground'].motion_bc = "Moving Wall"
+solver.setup.boundary_conditions.wall['ground'].vmag = {"option": "constant or expression", "constant": 13} if twentytwo_check else 13 # m/s
+solver.setup.boundary_conditions.wall['ground'].component_of_wall_translation = -1
+#solver.setup.boundary_conditions.wall['ground'].print_state()
 
-# solver.setup.boundary_conditions.wall['slip_wall'].shear_bc = "Specified Shear"
-# solver.setup.boundary_conditions.wall['slip_wall'].print_state()
+solver.setup.boundary_conditions.wall['slip_wall'].shear_bc = "Specified Shear"
+solver.setup.boundary_conditions.wall['slip_wall'].print_state()
 
-# solver.setup.boundary_conditions.wall['wing'].shear_bc = "No Slip"
-# #pprint(solver.setup.boundary_conditions.pressure_outlet['outlet'].prevent_reverse_flow)
-
-
-
-# solver.tui.solve.monitors.residual.plot("no")
-
-# # initialize with hybrid initialization
-# solver.solution.initialization.hybrid_initialize()
+solver.setup.boundary_conditions.wall['wing'].shear_bc = "No Slip"
+#pprint(solver.setup.boundary_conditions.pressure_outlet['outlet'].prevent_reverse_flow)
 
 
-# # run calculation
-# solver.solution.run_calculation.iterate(iter_count=300) if twentythree_check else solver.solution.run_calculation.iterate(number_of_iterations=300)
+
+solver.tui.solve.monitors.residual.plot("no")
+
+# initialize with hybrid initialization
+solver.solution.initialization.hybrid_initialize()
+
+
+# run calculation
+solver.solution.run_calculation.iterate(iter_count=300) if twentythree_check else solver.solution.run_calculation.iterate(number_of_iterations=300)
 
 solver.exit()
 
