@@ -85,13 +85,22 @@ def solve(mesh_dir, setup="2d"):
         # print(solver.setup.boundary_conditions.pressure_outlet['outlet'].prevent_reverse_flow)
         solver.setup.boundary_conditions.wall[wing].print_state()
 
-    """TODO: setup simulation"""
+    """TODO: setup residuals and output data"""
+    solver.tui.solve.monitors.residual.plot("yes")
+
+    # solve/monitors/force/drag-coefficient
+
+    # solver.tui.solve.monitors.force.drag_coefficient(
+    #     "yes", wings, "yes", "yes", "cdl", 2, "no", -1, 0
+    # )
+
+    solver.tui.solve.monitors.force
+
+    # solve/monitors/force/lift-coefficient
 
     # ==================================================
     #                 Run Simulation
     # ==================================================
-
-    # solver.tui.solve.monitors.residual.plot("no")
 
     # initialize the flow field using hybrid initialization
     """TODO MAKE IT INITIALIZE 15 PASSES"""
