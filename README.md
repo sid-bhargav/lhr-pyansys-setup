@@ -1,6 +1,8 @@
 # Longhorn Racing Combustion `pyansys` Setup
 
-Longhorn Racing Combustion setup to use pyansys and SOLIDWORKS design tables to automate the simulation of multiple CFD set ups. The setup is currently in development and does not currently work.
+Longhorn Racing Combustion setup to use pyansys and SOLIDWORKS design tables to automate the simulation of multiple CFD set ups. The setup is currently in development and currently has limited functionality.
+
+As of March 29th 2023, `cfd.py` is able to run a rudamentary fluent simulation. Development is continuing on producing more useful outputs from the simulations.
 
 ## Process
 
@@ -42,6 +44,12 @@ In Ansys Workbench go to `Tools > Options... > Geometry Import` and in `Advanced
 
 line 0: design table
 line 1: named selections directory
+
+To run the program in the command line do the following:
+
+Linux/Mac: `python3 main.py < data.in`
+
+Windows: `python main.py < data.in`
 
 ## `pyansys` Documentation
 
