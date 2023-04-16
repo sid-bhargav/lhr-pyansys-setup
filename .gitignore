@@ -1,5 +1,6 @@
-# ignore python venv
+# ignore python modules
 /venv/
+*.zip
 
 # ignore python cache
 */__pycache__/

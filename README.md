@@ -53,6 +53,10 @@ Windows: `python main.py < data.in`
 
 ## `pyansys` Documentation
 
+https://www.afs.enea.it/project/neptunius/docs/fluent/html/tuilist/node11.htm
+
+https://fluent.docs.pyansys.com/release/0.12/api/solver/_autosummary/settings/solution.html
+
 `pyansys` docs: https://docs.pyansys.com/
 
 `pyfluent` docs: https://fluent.docs.pyansys.com/release/0.12/

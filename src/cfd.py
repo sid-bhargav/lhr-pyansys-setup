@@ -2,15 +2,11 @@
 
 import os
 import ansys.fluent.core as pyfluent
-from ansys.fluent.core import examples
 
 
-def solve(mesh_dir, setup="2d"):
+def solve(mesh_dir, version="2d", iterations=600):
     # inputs for certain fields depending on solver version
-    if setup == "2d":
-        settings = {"version": "2d", "iterations": 600}
-    else:
-        settings = {"version": "3d", "iterations": 600}
+    settings = {"version": version, "iterations": iterations}
 
     # ==================================================
     #                  Create Solver
@@ -86,34 +82,49 @@ def solve(mesh_dir, setup="2d"):
         solver.setup.boundary_conditions.wall[wing].print_state()
 
     """TODO: setup residuals and output data"""
-    solver.tui.solve.monitors.residual.plot("yes")
 
-    # solve/monitors/force/drag-coefficient
+    # TUI COMMAND: solve/monitors/force/drag-coefficient
 
-    # solver.tui.solve.monitors.force.drag_coefficient(
-    #     "yes", wings, "yes", "yes", "cdl", 2, "no", -1, 0
-    # )
+    """TODO Find how to implement this functionality"""
 
-    solver.tui.solve.monitors.force
-
-    # solve/monitors/force/lift-coefficient
+    # TUI COMMAND: solve/monitors/force/lift-coefficient
 
     # ==================================================
     #                 Run Simulation
     # ==================================================
 
-    # initialize the flow field using hybrid initialization
-    """TODO MAKE IT INITIALIZE 15 PASSES"""
-    solver.solution.initialization.hybrid_initialize()
+    # # initialize the flow field using hybrid initialization
+    # solver.tui.solve.monitors.residual.plot("yes")
 
-    # solve for 150 iterations
-    solver.solution.run_calculation.iterate.get_attr("arguments")
-    if solver.get_fluent_version() >= "23.1.0":
-        solver.solution.run_calculation.iterate(iter_count=settings["iterations"])
-    else:
-        solver.solution.run_calculation.iterate(
-            number_of_iterations=settings["iterations"]
-        )
+    # """TODO MAKE IT INITIALIZE 15 PASSES"""
+    # solver.solution.initialization.hybrid_initialize()
+
+    # # solve for 150 iterations
+    # solver.solution.run_calculation.iterate.get_attr("arguments")
+    # if solver.get_fluent_version() >= "23.1.0":
+    #     solver.solution.run_calculation.iterate(iter_count=settings["iterations"])
+    # else:
+    #     solver.solution.run_calculation.iterate(
+    #         number_of_iterations=settings["iterations"]
+    #     )
+
+    solver.solution.report_definitions.drag["cda"] = {}
+    # solver.solution.report_definitions.drag["cda"].per_zone = True
+    solver.solution.report_definitions.drag["cda"].force_vector = [-1, 0, 0]
+    solver.solution.report_definitions.drag["cda"].print_state()
+    solver.solution.report_definitions.compute(report_defs=["cda"])
+
+    # solver.solution.report_definitions.drag["cda"].allowed_values()
+
+    solver.solution.report_definitions.lift["cla"] = {}
+    # solver.solution.report_definitions.lift["cla"].per_zone = True
+    # solver.solution.report_definitions.lift["cla"].force_vector = [1, 0, 0]
+    solver.solution.report_definitions.lift["cla"].print_state()
+    solver.solution.report_definitions.compute(report_defs=["cla"])
+
+    print(solver.solution.report_definitions.get_active_command_names())
+
+    print(solver.solution.report_definitions.lift.get_active_command_names())
 
     solver.exit()
 
